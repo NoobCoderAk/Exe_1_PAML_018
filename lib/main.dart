@@ -25,20 +25,20 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Start_Page(),
+      home: const StartPage(),
     );
   }
 }
 
 
-class Start_Page extends StatefulWidget {
-  const Start_Page({super.key});
+class StartPage extends StatefulWidget {
+  const StartPage({super.key});
 
   @override
-  State<Start_Page> createState() => _Start_PageState();
+  State<StartPage> createState() => _StartPageState();
 }
 
-class _Start_PageState extends State<Start_Page> {
+class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +46,8 @@ class _Start_PageState extends State<Start_Page> {
         child: Column(
           children: <Widget> [
             Container( //apply margin and padding using Container Widget.
-              padding: EdgeInsets.all(20), //You can use EdgeInsets like above
-              margin: EdgeInsets.only(top: 60),
+              padding: const EdgeInsets.all(20), //You can use EdgeInsets like above
+              margin: const EdgeInsets.only(top: 60),
               child: const Text(
                 "Pokedex.",
                 style: TextStyle(
@@ -58,8 +58,8 @@ class _Start_PageState extends State<Start_Page> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(20), //You can use EdgeInsets like above
-              margin: EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.all(20), //You can use EdgeInsets like above
+              margin: const EdgeInsets.only(top: 10),
               child: const Text(
                 "Welcome to Pokedex. \n You can find your favorite pokemon here",
                 textAlign: TextAlign.center,
@@ -69,8 +69,8 @@ class _Start_PageState extends State<Start_Page> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(20),
-              margin: EdgeInsets.only(top: 60, bottom: 130),
+              padding: const EdgeInsets.all(20),
+              margin: const EdgeInsets.only(top: 60, bottom: 130),
               child: Image.asset(
                 'assets/image/pokeball_logo.png',
                 height: 150,
@@ -80,11 +80,11 @@ class _Start_PageState extends State<Start_Page> {
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context)=>LoginPage(),)
+                  MaterialPageRoute(builder: (context)=>const LoginPage(),)
                 );
               },
-              child: const Icon(Icons.arrow_circle_right),
               backgroundColor: Colors.yellow,
+              child: const Icon(Icons.arrow_circle_right),
             )
           ],
         )
