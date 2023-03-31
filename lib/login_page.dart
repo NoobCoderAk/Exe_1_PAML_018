@@ -73,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (_username == null || _username.isEmpty){
                        return 'Please enter your name';
                       }
+                      return null;
                     },
                     onSaved: (_username){
                       username = _username!;
@@ -100,6 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (_password == null || _password.isEmpty){
                        return 'Please enter your password';
                       }
+                      return null;
                     },
                     onSaved: (_password){
                       password = _password!;
@@ -113,12 +115,15 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     ElevatedButton(
                       onPressed: (){
-                        Navigator.pushReplacement(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context)=> const StartPage(),
-                          )
-                        );
+                        // if (formKey.currentState!.validate()){
+                        //   formKey.currentState!.save();
+                        //   Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => StartPage(),
+                        //     )
+                        //   );
+                        // }
                       }, child: const Text('Login')
                     ),
                   ]
