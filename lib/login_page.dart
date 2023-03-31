@@ -13,10 +13,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
   late String username, password;
+  bool visibilityPass = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity, height: double.infinity,
         child: SingleChildScrollView(
           child: Column(
@@ -61,8 +62,8 @@ class _LoginPageState extends State<LoginPage> {
 
               //form username
               Container(
-                padding: EdgeInsets.all(2),
-                margin: EdgeInsets.only(bottom: 10, left: 20,right: 20),
+                padding: const EdgeInsets.all(2),
+                margin: const EdgeInsets.only(bottom: 10, left: 20,right: 20),
                 child: Column(
                   children: [
                     TextFormField(
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                         hintText: "Enter Your name",
                         labelText: "Name",
-                        prefixIcon: Icon(Icons.person),
+                        prefixIcon: const Icon(Icons.person),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0)
                         )
@@ -91,17 +92,26 @@ class _LoginPageState extends State<LoginPage> {
 
               //form pssword
               Container(
-                padding: EdgeInsets.all(2),
-                margin: EdgeInsets.only(left: 20,right: 20),
+                padding: const EdgeInsets.all(2),
+                margin: const EdgeInsets.only(left: 20,right: 20),
                 child: Column(
                   children: [
                     TextFormField(
+                      obscureText: !visibilityPass,
                       decoration: InputDecoration(
                         hintText: "Enter Your Password",
                         labelText: "Password",
-                        prefixIcon: Icon(Icons.lock),
+                        prefixIcon: const Icon(Icons.lock),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0)
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: (){
+                            setState(() {
+                              visibilityPass=!visibilityPass;
+                            });
+                          },
+                          icon: visibilityPass ? Icon(Icons.visibility) : Icon(Icons.visibility_off)
                         )
                       ),
                       validator: (_password) {
