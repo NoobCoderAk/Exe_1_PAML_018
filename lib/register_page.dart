@@ -2,7 +2,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  const RegisterPage({super.key, required String nama, required String password});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
