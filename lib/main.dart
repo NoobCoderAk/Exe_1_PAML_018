@@ -26,14 +26,15 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterPage(),
+      home: const StartPage(),
     );
   }
 }
 
-
 class StartPage extends StatefulWidget {
-  const StartPage({super.key,});
+  const StartPage({
+    super.key,
+  });
 
   @override
   State<StartPage> createState() => _StartPageState();
@@ -44,57 +45,59 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox(
-        width: double.infinity, height: double.infinity,
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget> [
-              Container( //apply margin and padding using Container Widget.
-                padding: const EdgeInsets.all(20), //You can use EdgeInsets like above
-                margin: const EdgeInsets.only(top: 60),
-                child: const Text(
-                  "Pokedex.",
-                  style: TextStyle(
-                    fontSize: 34.0, 
-                    fontWeight: FontWeight.bold,
-                    color: Colors.yellow,
+          width: double.infinity,
+          height: double.infinity,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  //apply margin and padding using Container Widget.
+                  padding: const EdgeInsets.all(
+                      20), //You can use EdgeInsets like above
+                  margin: const EdgeInsets.only(top: 60),
+                  child: const Text(
+                    "Pokedex.",
+                    style: TextStyle(
+                      fontSize: 34.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.yellow,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(20), //You can use EdgeInsets like above
-                margin: const EdgeInsets.only(top: 10),
-                child: const Text(
-                  "Welcome to Pokedex. \n You can find your favorite pokemon here",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                  color: Color.fromARGB(255, 155, 154, 154),
+                Container(
+                  padding: const EdgeInsets.all(
+                      20), //You can use EdgeInsets like above
+                  margin: const EdgeInsets.only(top: 10),
+                  child: const Text(
+                    "Welcome to Pokedex. \n You can find your favorite pokemon here",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 155, 154, 154),
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(20),
-                margin: const EdgeInsets.only(top: 60, bottom: 130),
-                child: Image.asset(
-                  'assets/image/pokeball_logo.png',
-                  height: 150,
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(top: 60, bottom: 130),
+                  child: Image.asset(
+                    'assets/image/pokeball_logo.png',
+                    height: 150,
+                  ),
                 ),
-              ),
-              FloatingActionButton(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context)=>const LoginPage(),)
-                  );
-                },
-                backgroundColor: Colors.yellow,
-                child: const Icon(Icons.arrow_circle_right),
-              )
-            ],
-          ),
-          
-        )
-      ),
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ));
+                  },
+                  backgroundColor: Colors.yellow,
+                  child: const Icon(Icons.arrow_circle_right),
+                )
+              ],
+            ),
+          )),
     );
   }
 }
-
