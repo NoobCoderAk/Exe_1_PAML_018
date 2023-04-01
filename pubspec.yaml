@@ -94,3 +94,9 @@ flutter:
   assets:
     - assets/image/pokeball_logo.png
     - assets/image/pokemon_logo.png
+
+    - assets/image/squirtle.png
+    - assets/image/charmander.png
+    - assets/image/charmeleon.png
+    - assets/image/charizard.png
+    - assets/image/soeharto.jpg

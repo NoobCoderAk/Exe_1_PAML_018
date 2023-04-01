@@ -25,26 +25,27 @@ class CardViewTemplate extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+          padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+          margin: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
           width: 500,
           decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
+                  color: Color.fromARGB(255, 80, 80, 80).withOpacity(0.1),
                   blurRadius: 7,
                   spreadRadius: 5,
                   offset: const Offset(0, 3),
                 ),
               ],
-              color: Colors.white),
+              color: Color.fromARGB(255, 255, 255, 255)),
           child: Row(
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 20, bottom: 10),
-                width: 150,
-                height: 150,
+                margin: const EdgeInsets.only(top: 5, bottom: 10),
+                width: 100,
+                height: 100,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(5),
@@ -80,17 +81,20 @@ class CardViewTemplate extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.only(left: 5),
+                            margin: EdgeInsets.only(bottom: 2),
+                            padding: const EdgeInsets.only(
+                                left: 5, right: 5, top: 2, bottom: 2),
                             width: 50,
                             decoration: BoxDecoration(
                                 shape: BoxShape.rectangle,
                                 borderRadius: BorderRadius.circular(5),
-                                color: Colors.blue),
+                                color: Color.fromARGB(255, 70, 190, 86)),
                             child: Text(
                               tipepoke,
                               style: const TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12),
                             ),
                           )
                         ],
@@ -98,7 +102,11 @@ class CardViewTemplate extends StatelessWidget {
                     ),
                     SizedBox(
                       width: 170,
-                      child: Text(deskpoke, textAlign: TextAlign.justify),
+                      child: Text(
+                        deskpoke,
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(fontSize: 12),
+                      ),
                     )
                   ],
                 ),

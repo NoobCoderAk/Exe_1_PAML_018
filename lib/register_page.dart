@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:pokemon_app/home_page.dart';
 import 'package:pokemon_app/main.dart';
 
+import 'login_page.dart';
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({
     Key? key,
@@ -35,8 +37,26 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.only(top: 30, bottom: 5),
+                    padding: EdgeInsets.only(left: 20, top: 30),
+                    child: Row(
+                      children: [
+                        FloatingActionButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginPage(),
+                                ));
+                          },
+                          backgroundColor: Colors.yellow,
+                          child: const Icon(Icons.arrow_circle_left),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(2),
+                    margin: const EdgeInsets.only(top: 2, bottom: 5),
                     child: Image.asset(
                       'assets/image/pokemon_logo.png',
                       height: 150,
@@ -49,7 +69,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     //apply margin and padding using Container Widget.
                     padding: const EdgeInsets.all(
                         5), //You can use EdgeInsets like above
-                    margin: const EdgeInsets.only(top: 5, bottom: 20),
+                    margin: const EdgeInsets.only(top: 5, bottom: 10),
                     child: const Text(
                       "Register",
                       textAlign: TextAlign.center,

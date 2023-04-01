@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:pokemon_app/card_view_template.dart';
 
 class HomePage extends StatefulWidget {
   final String nama;
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         fit: BoxFit.fill,
-                        image: AssetImage('assets/image/pokemon_logo.png'),
+                        image: AssetImage('assets/image/soeharto.jpg'),
                       ),
                     ),
                   ),
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20, bottom: 30),
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: TextField(
                   decoration: InputDecoration(
@@ -100,6 +101,38 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              Column(
+                children: const [
+                  CardViewTemplate(
+                      nomorpoke: '#001',
+                      namapoke: 'Squirtle',
+                      deskpoke:
+                          'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
+                      assetpoke: 'assets/image/squirtle.png',
+                      tipepoke: 'Water'),
+                  CardViewTemplate(
+                      nomorpoke: '#002',
+                      namapoke: 'Charmeleon',
+                      deskpoke:
+                          'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
+                      assetpoke: 'assets/image/charmeleon.png',
+                      tipepoke: 'Water'),
+                  CardViewTemplate(
+                      nomorpoke: '#003',
+                      namapoke: 'Fire',
+                      deskpoke:
+                          'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
+                      assetpoke: 'assets/image/charmander.png',
+                      tipepoke: 'Fire'),
+                  CardViewTemplate(
+                      nomorpoke: '#004',
+                      namapoke: 'charizard',
+                      deskpoke:
+                          'When it retracts its long neck into its shell, it squirts out water with vigorous force.',
+                      assetpoke: 'assets/image/charizard.png',
+                      tipepoke: 'Fire'),
+                ],
+              )
             ],
           ),
         ),

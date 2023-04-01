@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                               return 'Please input your Name';
                             } else if (value.length <= 5) {
                               return "Name must be at least 6 character long !";
-                            } else if (value != "admin12345") {
+                            } else if (value != "soeharto") {
                               return 'Incorrect Name !';
                             }
                             return null;
