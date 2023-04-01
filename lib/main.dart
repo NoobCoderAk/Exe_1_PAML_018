@@ -26,14 +26,14 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const StartPage(nama: '', password: '',),
+      home: const RegisterPage(),
     );
   }
 }
 
 
 class StartPage extends StatefulWidget {
-  const StartPage({super.key, required String nama, required String password});
+  const StartPage({super.key,});
 
   @override
   State<StartPage> createState() => _StartPageState();

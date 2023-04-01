@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:pokemon_app/home_page.dart';
 import 'package:pokemon_app/main.dart';
 import 'package:validators/validators.dart';
 import 'package:pokemon_app/register_page.dart';
@@ -13,7 +14,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final formKey = GlobalKey<FormState>();
 
   late String username, password;
 
@@ -42,6 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Image.asset(
                     'assets/image/pokemon_logo.png',
                     height: 150,
+                    width: 300,
                   ),
                 ),
 
@@ -144,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                           }
                           return null;
                         },
-                        maxLength: 16,
+                        // maxLength: 16,
                       )
                     ],
                   ),
@@ -163,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => StartPage(nama: username, password: password)
+                                  builder: (context) => HomePage(nama: username, password: password)
                                 )
                               );
                             }
