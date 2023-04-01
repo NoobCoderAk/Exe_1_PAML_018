@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:pokemon_app/home_page.dart';
-import 'package:pokemon_app/main.dart';
-import 'package:validators/validators.dart';
 import 'package:pokemon_app/register_page.dart';
 
 class LoginPage extends StatefulWidget {

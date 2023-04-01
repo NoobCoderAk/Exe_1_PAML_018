@@ -1,7 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:pokemon_app/card_view_template.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,8 +53,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.only(top: 40, left: 200),
-                    margin: const EdgeInsets.only(top: 40, left: 145),
+                    padding: const EdgeInsets.only(top: 40, left: 20),
+                    margin: const EdgeInsets.only(top: 40, left: 175),
                     height: 60,
                     width: 70,
                     decoration: const BoxDecoration(

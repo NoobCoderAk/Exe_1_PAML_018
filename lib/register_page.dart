@@ -1,9 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:pokemon_app/home_page.dart';
-import 'package:pokemon_app/main.dart';
 
 import 'login_page.dart';
 
@@ -37,7 +33,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.only(left: 20, top: 30),
+                    padding: const EdgeInsets.only(left: 20, top: 30),
                     child: Row(
                       children: [
                         FloatingActionButton(
@@ -234,12 +230,12 @@ class _RegisterPageState extends State<RegisterPage> {
                                           nama: username, password: password)));
                             }
                           },
-                          child: const Text('Register'),
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(32.0)),
                               backgroundColor: Colors.yellow,
-                              minimumSize: const Size(200, 40))),
+                              minimumSize: const Size(200, 40)),
+                          child: const Text('Register')),
                     ]),
                   ),
                 ],

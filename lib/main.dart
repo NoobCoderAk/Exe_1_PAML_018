@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/login_page.dart';
-import 'package:pokemon_app/register_page.dart';
 
 void main() {
   runApp(const MyApp());
