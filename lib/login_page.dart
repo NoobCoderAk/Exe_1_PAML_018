@@ -74,6 +74,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
+                
+
                 //form username
                 Container(
                   padding: const EdgeInsets.all(2),
@@ -92,8 +94,12 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ),
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please Input Username';
+                          if (value!.isEmpty) {
+                            return 'Please input your Name';
+                          }else if (value.length <=5){
+                            return "Name must be at least 6 character long !";
+                          }else if ( value!="admin12345"){
+                            return 'Incorrect Name !';
                           }
                           return null;
                         },
@@ -129,8 +135,12 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ),
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please Input Passowrd';
+                          if (value!.isEmpty) {
+                            return 'Please input your Pasword';
+                          }else if (value.length <=5){
+                            return "Password must be at least 6 character long !";
+                          }else if ( value!="123456"){
+                            return 'Incorrect password !';
                           }
                           return null;
                         },
@@ -146,28 +156,16 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         ElevatedButton(
                           onPressed: (){
-
                             username = cUser.text;
                             password = cPass.text;
 
-                            if (_formKey.currentState!.validate()) {
-
-                              if(cUser != 'admin'){
-                                print("username salah");
-                              }else if(cPass.text.length < 6){
-                                print("password harus minimal atau lebih dari 6 ");
-                              }else{
-                                //aksi pindah
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => RegisterPage(
-                                      nama: username,
-                                      password:password, // variable yang di pass ke page home
-                                    )
-                                  )
-                                );
-                              }
+                            if(_formKey.currentState!.validate()){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StartPage(nama: username, password: password)
+                                )
+                              );
                             }
                           }, child: const Text('Login')
                         ),
@@ -181,15 +179,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  // void validateLogin(BuildContext context){
-  //   if(cUser.text==username && cPass.text==password){
-  //     Navigator.push(
-  //       context,
-  //       MaterialPageRoute(builder: (context)=>const RegisterPage(),)
-  //     );
-  //   }else if (cUser.text.isEmpty && cPass.text==password){
-      
-  //   }
-  // }
 }
